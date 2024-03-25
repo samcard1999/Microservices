@@ -1,0 +1,25 @@
+version: '3.5'
+ 
+services: 
+     registry:
+        image: docker.uclv.cu/registry:2.7.1
+        container_name: registry
+        networks:
+            - hub_network
+        restart: always
+        ports: 
+            - '5000:5000'
+        volumes: 
+            - ./registry-data:/var/lib/registry
+            - ./config.yml:/etc/docker/registry/config.yml
+        environment:
+         REGISTRY_PROXY_REMOTEURL: "https://docker.uclv.cu"
+         # Si navegas por proxy descomenta las líneas de abajo y pon la ip y puerto del proxy
+         #HTTP_PROXY: ip:puerto
+         #HTTPS_PROXY:  ip:puerto
+         #NO_PROXY: localhost,127.0.0.1,10.0.0.7
+         #no_proxy: localhost,127.0.0.1,10.0.0.7
+ 
+networks:
+  hub_network:
+    driver: bridge
