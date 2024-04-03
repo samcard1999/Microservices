@@ -35,7 +35,7 @@ spec:
         persistentVolumeClaim:
           claimName: mssql-claim
 ---
-apiVersion: v1
+apiVersion: v1                               
 kind: Service
 metadata:
   name: mssql-clusterip-srv
