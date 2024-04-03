@@ -1,0 +1,604 @@
+{
+	"info": {
+		"_postman_id": "b8f91c87-59bf-4c2e-9b9f-3ab5ae23adc5",
+		"name": "Microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25918814"
+	},
+	"item": [
+		{
+			"name": "Microservices",
+			"item": [
+				{
+					"name": "Docker",
+					"item": [
+						{
+							"name": "Platform Service",
+							"item": [
+								{
+									"name": "GetAll",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:2345/api/PlatformsControllers",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "2345",
+											"path": [
+												"api",
+												"PlatformsControllers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetById",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://localhost:2345/api/PlatformsControllers",
+											"protocol": "https",
+											"host": [
+												"localhost"
+											],
+											"port": "2345",
+											"path": [
+												"api",
+												"PlatformsControllers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "CreatePlatform",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"SQLite\",\r\n    \"publisher\": \"Microsoft\",\r\n    \"cost\": \"Free\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:2345/api/PlatformsControllers/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "2345",
+											"path": [
+												"api",
+												"PlatformsControllers",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "LocalDev",
+					"item": [
+						{
+							"name": "PlatformService",
+							"item": [
+								{
+									"name": "CreatePlatform",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"SQLite600\",\r\n    \"publisher\": \"Microsoft\",\r\n    \"cost\": \"Free\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:5046/api/PlatformsControllers/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5046",
+											"path": [
+												"api",
+												"PlatformsControllers",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetAll",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"SQLite\",\r\n    \"publisher\": \"Microsoft\",\r\n    \"cost\": \"Free\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:5046/api/PlatformsControllers/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5046",
+											"path": [
+												"api",
+												"PlatformsControllers",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetById",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5046/api/PlatformsControllers/2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5046",
+											"path": [
+												"api",
+												"PlatformsControllers",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "CommandsService",
+							"item": [
+								{
+									"name": "Test Inbound Connection",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Docker\",\r\n    \"publisher\": \"Docker\",\r\n    \"cost\": \"Free\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:6000/api/c/Platforms/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6000",
+											"path": [
+												"api",
+												"c",
+												"Platforms",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get All Platforms",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:6000/api/c/platforms",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6000",
+											"path": [
+												"api",
+												"c",
+												"platforms"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get all Commands for PLatforms",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:6000/api/c/platforms/1/commands",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6000",
+											"path": [
+												"api",
+												"c",
+												"platforms",
+												"1",
+												"commands"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Command for PLatform",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:6000/api/c/platforms/1/commands/3",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6000",
+											"path": [
+												"api",
+												"c",
+												"platforms",
+												"1",
+												"commands",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Command For Platform",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"HowTo\" : \"Build a .net project\",\r\n    \"CommandLine\":\"dotnet build\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:6000/api/c/platforms/4/commands",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "6000",
+											"path": [
+												"api",
+												"c",
+												"platforms",
+												"4",
+												"commands"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "K8S",
+					"item": [
+						{
+							"name": "Platform Service (Node Portl)",
+							"item": [
+								{
+									"name": "GetAll",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:32530/api/PlatformsControllers",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "32530",
+											"path": [
+												"api",
+												"PlatformsControllers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "CreatePlatform",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"SQLite\",\r\n    \"publisher\": \"Microsoft\",\r\n    \"cost\": \"Free\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:32530/api/PlatformsControllers/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "32530",
+											"path": [
+												"api",
+												"PlatformsControllers",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "GetById Copy",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:32530/api/PlatformsControllers/2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "32530",
+											"path": [
+												"api",
+												"PlatformsControllers",
+												"2"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Platform Service (Nginx)",
+							"item": [
+								{
+									"name": "GetAll",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://acme.com:32566/api/PlatformsControllers",
+											"protocol": "https",
+											"host": [
+												"acme",
+												"com"
+											],
+											"port": "32566",
+											"path": [
+												"api",
+												"PlatformsControllers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "CreatePlatform",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"SQLite\",\r\n    \"publisher\": \"Microsoft\",\r\n    \"cost\": \"Free\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://acme.com:32566/api/PlatformsControllers/",
+											"protocol": "https",
+											"host": [
+												"acme",
+												"com"
+											],
+											"port": "32566",
+											"path": [
+												"api",
+												"PlatformsControllers",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "CommandsService(Nginx)",
+							"item": [
+								{
+									"name": "Test Inbound Connection",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Docker\",\r\n    \"publisher\": \"Docker\",\r\n    \"cost\": \"Free\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://acme.com:32566/api/c/Platforms/",
+											"protocol": "https",
+											"host": [
+												"acme",
+												"com"
+											],
+											"port": "32566",
+											"path": [
+												"api",
+												"c",
+												"Platforms",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get All Platforms",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://acme.com:32566/api/c/platforms",
+											"protocol": "https",
+											"host": [
+												"acme",
+												"com"
+											],
+											"port": "32566",
+											"path": [
+												"api",
+												"c",
+												"platforms"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get all Commands for PLatforms",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://acme.com:32566/api/c/platforms/1002/commands",
+											"protocol": "https",
+											"host": [
+												"acme",
+												"com"
+											],
+											"port": "32566",
+											"path": [
+												"api",
+												"c",
+												"platforms",
+												"1002",
+												"commands"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Command for PLatform",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://acme.com:32566/api/c/platforms/1/commands/3",
+											"protocol": "https",
+											"host": [
+												"acme",
+												"com"
+											],
+											"port": "32566",
+											"path": [
+												"api",
+												"c",
+												"platforms",
+												"1",
+												"commands",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Command For Platform",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"HowTo\" : \"Build a .net project\",\r\n    \"CommandLine\":\"dotnet build\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "https://acme.com:32566/api/c/platforms/1002/commands",
+											"protocol": "https",
+											"host": [
+												"acme",
+												"com"
+											],
+											"port": "32566",
+											"path": [
+												"api",
+												"c",
+												"platforms",
+												"1002",
+												"commands"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
